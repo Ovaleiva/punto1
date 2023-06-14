@@ -1,0 +1,13 @@
+def contarpalabra(palabra, vector, contador=0):
+    if not vector:
+        return contador
+    else:
+        if vector[0] == palabra:
+            contador += 1
+        return contarpalabra(palabra, vector[1:], contador)
+
+vector = ['Messi', 'Di Maria', 'Julian Alvarez', 'Enzo Fernandez', 'Messi', 'Paredes']
+palabra = 'Messi'
+
+resultado = contarpalabra(palabra, vector)
+print(f"La palabra '{palabra}' aparece {resultado} veces en el vector.")

@@ -1,0 +1,51 @@
+bitacora= [
+    ("Tatooine"),
+    ("Endor"),
+    ("Coruscant"),
+    ("Hoth"),
+    ("Kashyyyk")
+    ]
+pila = []
+
+for mision in bitacora:
+    planeta = mision
+    pila.append(planeta)
+
+print("Planetas visitados en orden:")
+while pila:
+    planeta = pila.pop()
+    print(planeta)
+
+
+listadelabitacora= [
+    ("Tatooine", "Boba Fett", 50000),
+    ("Endor", "Ewoks", 10000),
+    ("Coruscant", "Jabba the Hutt", 200000),
+    ("Hoth", "Rebels", 75000),
+    ("Kashyyyk","Han Solo", 80000)
+]
+
+total_creditos = 0
+
+for mision in listadelabitacora:
+    _, _, recompensa = mision
+    total_creditos += recompensa
+
+print("Créditos galácticos recaudados:", total_creditos)
+
+objetivo = "Han Solo"
+numero_mision = None
+planeta = None
+
+for i, mision in enumerate(listadelabitacora, 1):
+    _, capturado, _ = mision
+    if capturado == objetivo:
+        numero_mision = i
+        planeta = mision[0]
+        break
+
+if numero_mision is not None:
+    print("Número de la misión:", numero_mision)
+    print("Planeta de la captura:", planeta)
+else:
+    print("No se encontró información sobre la captura de", objetivo, "en la bitácora.")
